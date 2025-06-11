@@ -1,0 +1,102 @@
+/* Container */
+.categories-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Title */
+.categories-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form */
+.categories-form {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.category-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.category-button {
+  padding: 10px 15px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.category-button:hover {
+  background: #0056b3;
+}
+
+/* Category List */
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Category Item */
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+
+.category-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Buttons */
+.category-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button {
+  padding: 5px 10px;
+  background: #FBC02D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background: #F9A825;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #B71C1C;
+}

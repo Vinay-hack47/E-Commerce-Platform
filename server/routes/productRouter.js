@@ -63,7 +63,6 @@ router.post("/upload", auth, authAdmin, upload.single("file"), productCtrl.uploa
 router.route("/products/:id")
 
 .delete(auth, authAdmin,productCtrl.deleteProducts)
-
 .put(auth, authAdmin, productCtrl.updateProducts);
 
 module.exports = router;

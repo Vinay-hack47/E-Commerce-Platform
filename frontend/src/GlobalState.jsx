@@ -17,7 +17,6 @@ export const DataProvider = ({ children }) => {
       console.error('Error refreshing token', err);
     }
   };
-  console.log(token);
 
   useEffect(() => {
     const firstLogin = localStorage.getItem('firstLogin');

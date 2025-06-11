@@ -53,9 +53,9 @@ const userCtrl = {
           return res.status(400).json({ msg: "Please login or Register " });
         const accesstoken = createAccessToken({ id: user.id });
 
-        res.json({accesstoken});
+        res.json({accesstoken, userId: user.id});
       });
-    } catch {
+    } catch(err) {
       res.status(500).json({ msg: err.message });
     }
   },
@@ -87,7 +87,7 @@ const userCtrl = {
       res.clearCookie("refreshtoken",{path:'/user/refresh_token'})
       return res.json({msg: "Logged out"})
   }
-  catch{
+  catch(err){
     res.status(500).json({ msg: err.message });
   }
   },

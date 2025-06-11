@@ -19,7 +19,6 @@ const CreateProduct = () => {
   const [imagePreview, setImagePreview] = useState(null); // State for the image preview
   const navigate = useNavigate();
 
-  console.log(imageFile);
   
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -72,7 +71,6 @@ const CreateProduct = () => {
         images: imageFile
       };
 
-      console.log("Submitting product:", newProduct); // Log the product data
       await axios.post('http://localhost:5000/api/products', newProduct, {
         headers: { Authorization: token }
       });

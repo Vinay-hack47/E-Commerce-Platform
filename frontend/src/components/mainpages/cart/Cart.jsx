@@ -6,6 +6,7 @@ import "./Cart.css";
 const Cart = () => {
   const state = useContext(GlobalState);
   const [cart, setCart] = state.cart;
+  
 
   const removeProduct = (id) => {
     setCart(cart.filter(item => item._id !== id));
@@ -29,7 +30,7 @@ const Cart = () => {
       <div className="cart">
         {cart.map(product => (
           <div className="cart-item" key={product._id}>
-            <img src={product.images} alt={product.title} />
+            <img src={product.images.url} alt={product.title} />
             <div className="cart-details">
               <h2>{product.title}</h2>
               <h3>${product.price}</h3>

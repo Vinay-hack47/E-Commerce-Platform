@@ -7,6 +7,7 @@ import DetailProduct from "../mainpages/utils/DetailProducts/DetailProduct"
 import CreateProduct from '../admin-features/CreateProduct'
 import EditProduct from '../admin-features/EditProduct'
 import DeleteProduct from '../admin-features/DeleteProduct'
+import Categories from "../admin-features/Categories"
 
 
 const Page = () => {
@@ -21,6 +22,7 @@ const Page = () => {
     <Route path='/create_product' element={<CreateProduct />}></Route>
     <Route path='/edit/:id' element={<EditProduct />}></Route>
     <Route path='/delete/:id' element={<DeleteProduct />}></Route>
+    <Route path='/categories' element={<Categories />}></Route>
    </Routes>
   )
 }

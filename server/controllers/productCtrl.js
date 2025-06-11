@@ -41,7 +41,6 @@ class APIfeatures {
     const queryObj = { ...this.queryString };
     const excludeFields = ["page", "sort", "limit"];
     excludeFields.forEach((el) => delete queryObj[el]);
-    console.log(queryObj);
 
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
@@ -97,42 +96,7 @@ const productCtrl = {
     }
   },
   createProducts: async (req, res) => {
-    // console.log(req.body);
-    // const result = req.file.photo;
-    // cloudinary.uploader.upload(File.tempFilePath,(err,result) =>{
-    //   console.log(result);
-    //   if(err) console.log(err);
-      
-      
-    // })
-
-
-    //Code for cloudinary to upload image 
-    // try {
-      // const file = req.files.photo;
-
-
-      // if (!req.file) {
-      //   return res.status(400).json({ message: "No file uploaded" });
-      // }
-  
-      // Upload the file to Cloudinary
-      //  cloudinary.uploader.upload(file.tempFilePath,(err,result) =>{
-      //   console.log(result);
-        
-      //  });
-  
-      // Log the result from Cloudinary
-      // console.log(result);
-  
-    //   res.status(200).json({ message: "File uploaded successfully", data: result });
-    // } catch (err) {
-    //   console.error(err);
-    //   res.status(500).json({ message: "Something went wrong" });
-    // }
-    
-
-    try {
+  try {
       const {
         product_id,
         title,
@@ -143,7 +107,6 @@ const productCtrl = {
       } = req.body;
 
       let imageData = req.body.images;
-      console.log(imageData);
       
 
       // If frontend didn't upload to Cloudinary, handle it in backend
@@ -175,7 +138,6 @@ const productCtrl = {
         category,
       });
 
-      console.log(newProduct);
       
       await newProduct.save();
 
