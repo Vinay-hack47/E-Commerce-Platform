@@ -21,7 +21,7 @@ const Register = () => {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/user/register", { ...user });
+      await axios.post("https://e-commerce-platform-hbbx.onrender.com/user/register", { ...user });
 
       localStorage.setItem("firstRegister", true);
 

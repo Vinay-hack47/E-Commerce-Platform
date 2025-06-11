@@ -71,7 +71,7 @@ const CreateProduct = () => {
         images: imageFile
       };
 
-      await axios.post('http://localhost:5000/api/products', newProduct, {
+      await axios.post('https://e-commerce-platform-hbbx.onrender.com/api/products', newProduct, {
         headers: { Authorization: token }
       });
       navigate('/');

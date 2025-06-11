@@ -19,7 +19,7 @@ const Login = () => {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/user/login", { ...user });
+      const res = await axios.post("https://e-commerce-platform-hbbx.onrender.com/user/login", { ...user });
 
       localStorage.setItem("firstLogin", true);
       localStorage.setItem("userRole", res.data.role);

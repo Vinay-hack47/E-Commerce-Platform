@@ -11,7 +11,7 @@ const DeleteProduct = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`https://e-commerce-platform-hbbx.onrender.com/api/products/${id}`)
       .then((response) => {
         setProducts(response.data); 
         setDetailProduct(response.data); 
@@ -25,7 +25,7 @@ const DeleteProduct = () => {
   
   const deleteProduct = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`https://e-commerce-platform-hbbx.onrender.com/api/products/${id}`, {
         headers: { Authorization: localStorage.getItem('token') }
       });
       toast.success("Product deleted successfully");

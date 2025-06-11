@@ -11,7 +11,7 @@ export const DataProvider = ({ children }) => {
 
   const refreshToken = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/user/refresh_token');
+      const res = await axios.get('https://e-commerce-platform-hbbx.onrender.com/user/refresh_token');
       setToken(res.data.accesstoken);
     } catch (err) {
       console.error('Error refreshing token', err);
@@ -30,7 +30,7 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     if (token) {
-      axios.get('http://localhost:5000/user/infor', {
+      axios.get('https://e-commerce-platform-hbbx.onrender.com/user/infor', {
         headers: { Authorization: token }
       }).then(res => {
         setUserRole(res.data.role); // Set user role

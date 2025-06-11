@@ -25,7 +25,7 @@ const EditProduct = () => {
   const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`https://e-commerce-platform-hbbx.onrender.com/api/products/${id}`)
       .then((response) => {
         setProduct(response.data);
         setImageData(response.data.images );
@@ -87,7 +87,7 @@ const EditProduct = () => {
         images: imageData
       };
 
-      await axios.put(`http://localhost:5000/api/products/${id}`, updatedProduct, {
+      await axios.put(`https://e-commerce-platform-hbbx.onrender.com/api/products/${id}`, updatedProduct, {
         headers: { Authorization: `Bearer ${token}` } 
       });
       navigate('/');

@@ -10,7 +10,7 @@ const ProductAPI = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
+    axios.get("https://e-commerce-platform-hbbx.onrender.com/api/products")
       .then((response) => {
         setProducts(response.data);
       })

@@ -9,7 +9,7 @@ const Categories = () => {
   const [editId, setEditId] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/category/category')
+    axios.get('https://e-commerce-platform-hbbx.onrender.com/category/category')
       .then(response => {
         setCategories(response.data);
       })
@@ -22,13 +22,13 @@ const Categories = () => {
     e.preventDefault();
     try {
       if (editing) {
-        await axios.put(`http://localhost:5000/category/category/${editId}`, { name }, {
+        await axios.put(`https://e-commerce-platform-hbbx.onrender.com/category/category/${editId}`, { name }, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         setEditing(false);
         setEditId('');
       } else {
-        await axios.post('http://localhost:5000/category/category', { name }, {
+        await axios.post('https://e-commerce-platform-hbbx.onrender.com/category/category', { name }, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
       }
@@ -41,7 +41,7 @@ const Categories = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/category/category');
+      const response = await axios.get('https://e-commerce-platform-hbbx.onrender.com/category/category');
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories', error);
@@ -56,7 +56,7 @@ const Categories = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/category/category/${id}`, {
+      await axios.delete(`https://e-commerce-platform-hbbx.onrender.com/category/category/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       fetchCategories();
