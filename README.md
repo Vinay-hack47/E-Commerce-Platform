@@ -41,6 +41,7 @@
 
 ### Admin Product Management
 
+<img src="./screenshot-admin-products.png" alt="Admin Product Management Screenshot" width="800"/>
 
 <!-- Add more screenshots as needed -->
 
