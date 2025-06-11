@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-[View Live Demo](https://your-demo-link.com)
+[View Live Demo](https://e-commerce-platform-hbbx.onrender.com)
 
 ## Features
 
@@ -41,7 +41,7 @@
 
 ### Admin Product Management
 
-<img src="./screenshot-admin-products.png" alt="Admin Product Management Screenshot" width="800"/>
+<img src="https://github.com/Vinay-hack47/E-Commerce-Platform/blob/1460372ced5213bad67759cb047dece466423016/Screenshot%202025-06-11%20180051.png" width="800"/>
 
 <!-- Add more screenshots as needed -->
 
