@@ -15,6 +15,7 @@ const _dirname = path.resolve();
 app.use(express.json()); // For parsing JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+const stripe = require('stripe')('sk_test_51Rar4ZPQb3upb9Bb7AOMVSsOZsIOvrD1QpaYZWvILNP4Dap4aRf8tTizd56FPVLgnKh337QzwI2gqmRtwGXmFp5H007M7tHUC1');
 
 // Connect MongoDB
 const URI = process.env.MONGODB_URI;
@@ -37,12 +38,44 @@ app.use(
   })
 );
 
+app.post("/api/create-checkout-session", async (req, res) => {
+  const { cartItems } = req.body;
+
+  const line_items = cartItems.map((item) => ({
+    price_data: {
+      currency: "usd",
+      product_data: {
+        name: item.title,
+      },
+      unit_amount: item.price * 100, // Stripe uses cents
+    },
+    quantity: item.quantity,
+  }));
+
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ["card"],
+    line_items,
+    mode: "payment",
+    success_url: "http://localhost:5000/success",
+    cancel_url: "http://localhost:5000/cancel",
+  });
+
+  res.json({ id: session.id });
+});
+
+app.get("/success", (req, res) => {
+  res.send("Payment successful! Thank you for your purchase.");
+});
+
+app.get("/cancel", (req, res) => {
+  res.send("Payment cancelled. You haven't been charged.");
+});
+
 // Routes
 app.use("/user", require("./routes/userRouter"));
 app.use("/category", require("./routes/categoryRouter"));
 // app.use('/upload', require("./routes/upload"));
 app.use("/api", require("./routes/productRouter"));
-
 
 app.use(express.static(path.join(_dirname, "frontend/dist")));
 app.get("*", (req, res) => {

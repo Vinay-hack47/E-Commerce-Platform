@@ -94,3 +94,24 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
+/* Loading spinner */
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.checkout:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
