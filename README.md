@@ -1,16 +1,12 @@
 # E-Commerce-Platform
 
-<p align="center">
-  <img src="./screenshot-admin-products.png" alt="Admin Product Management Screenshot" width="800"/>
-</p>
-
 ## Overview
 
 **E-Commerce-Platform** is a full-stack MERN (MongoDB, Express, React, Node.js) e-commerce application featuring robust admin controls, JWT authentication, Cloudinary image uploads, and a professional UI/UX built with Tailwind CSS. The platform supports product and category management, secure authentication, and seamless category-product association, all wrapped in a modern, responsive interface.
 
 ## Live Demo
 
-[View Live Demo](https://your-demo-link.com)
+[View Live Demo](https://e-commerce-platform-hbbx.onrender.com)
 
 ## Features
 
@@ -44,7 +40,8 @@
 ## Screenshots
 
 ### Admin Product Management
-![Admin Product Management](./screenshot-admin-products.png)
+
+<img src="https://github.com/Vinay-hack47/E-Commerce-Platform/blob/1460372ced5213bad67759cb047dece466423016/Screenshot%202025-06-11%20180051.png" width="800"/>
 
 <!-- Add more screenshots as needed -->
 

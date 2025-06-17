@@ -15,7 +15,7 @@ const _dirname = path.resolve();
 app.use(express.json()); // For parsing JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-const stripe = require('stripe')('sk_test_51Rar4ZPQb3upb9Bb7AOMVSsOZsIOvrD1QpaYZWvILNP4Dap4aRf8tTizd56FPVLgnKh337QzwI2gqmRtwGXmFp5H007M7tHUC1');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // Connect MongoDB
 const URI = process.env.MONGODB_URI;
