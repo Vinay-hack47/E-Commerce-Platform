@@ -25,7 +25,7 @@ const Cart = () => {
 
   const checkoutHandler = async () => {
     setIsLoading(true);
-    const stripe = await loadStripe("pk_test_51Rar4ZPQb3upb9BbQZCxvKgddVkeGDaoS6nIcw4YGejK9rPDT3tgtPWQNqfGNBWZ0dEl4yDgMpIcWhlOMLy3NudI00c4yWdqT3");
+    const stripe = await loadStripe("pk_test_51Rapa3AX2eBB7s4n9qsPrt0k4OwrpozaN7lRYLmiSpttezVOlolucKDkEnoREFLyM5Qt7sXHIe6JN79FJ3EdI0TJ004Bhc0vHG");
 
     try {
       const response = await axios.post(
