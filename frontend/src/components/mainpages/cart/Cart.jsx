@@ -29,7 +29,7 @@ const Cart = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/create-checkout-session",
+        "https://e-commerce-platform-hbbx.onrender.com/api/create-checkout-session",
         { cartItems: cart },
         { 
           headers: { 
